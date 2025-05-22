@@ -19,7 +19,7 @@ function Products() {
 
   const fetchProducts = async () => {
     try {
-      const response = await axios.get('http://localhost:8080/products');
+      const response = await axios.get('/products');
       setProducts(response.data);
     } catch (error) {
       console.error('Error fetching products:', error);
@@ -30,7 +30,7 @@ function Products() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:8080/products', newProduct);
+      await axios.post('/products', newProduct);
       toast.success('Product added successfully');
       fetchProducts();
       setNewProduct({

@@ -16,7 +16,7 @@ function Sales() {
 
   const fetchProducts = async () => {
     try {
-      const response = await axios.get('http://localhost:8080/products');
+      const response = await axios.get('/products');
       setProducts(response.data);
     } catch (error) {
       console.error('Error fetching products:', error);
@@ -27,7 +27,7 @@ function Sales() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:8080/sales', sale);
+      await axios.post('/sales', sale);
       toast.success('Sale recorded successfully');
       setSale({
         customerName: '',
